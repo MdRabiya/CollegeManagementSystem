@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Container for admission requests */
+.admission-request-container {
+    max-width: 600px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Style for admission request */
+.admission-request {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #3e1a9f;
+    background-color: #f8f8f8; /* Optional: Add a background color */
+}
+
+/* Style for student name */
+.student-name {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style for admission status */
+.admission-status {
+    font-weight: bold;
+}
+
+/* Style for action buttons */
+.action-buttons {
+    margin-top: 10px;
+}
+
+.action-buttons a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 3px;
+}
+
+/* Style for approve button */
+.approve-btn {
+    background-color: #4caf50; /* Green */
+}
+
+/* Style for reject button */
+.reject-btn {
+    background-color: #f44336; /* Red */
+}
+
+    </style>
+</head>
+<body><center>
+    <h1>Student Admission Requests</h1>
+    <div class="admission-request-container">
+        {% for admission_request in admission_requests %}
+            <div class="admission-request">
+                <p class="student-name">{{ admission_request.student_form.first_name }} {{ admission_request.student_form.last_name }} - <span class="admission-status">{% if admission_request.is_approved %}Approved{% else %}Reject{% endif %}</span></p>
+                <div class="action-buttons">
+                    <a class="approve-btn" href="{% url 'finalapp:approve_student_admission' admission_request.id %}">Approve</a>
+                    <a class="reject-btn" href="{% url 'finalapp:reject_student_admission' admission_request.id %}">Reject</a>
+                </div>
+            </div>
+        {% endfor %}</center>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h3 {
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #495057;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Attendance Date</h1>
+
+    <form method="post" action="{% url 'finalapp:save_attendance' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Select Date</button>
+        {% for data in attendance_data %}
+        <h3>{{ data.student.Firstname }}</h3>
+        <ul>
+           
+           
+        </ul>
+        <label for="{{ data.student.id }}">Attendance:</label>
+        <select name="attendance_{{ data.student.id }}">
+            <option value="present">Present</option>
+            <option value="absent">Absent</option>
+        </select>
+        <br>
+    {% endfor %}
+
+    <br><input type="submit" value="Submit Attendance">
+
+    </form>
+
+</body>
+</html>

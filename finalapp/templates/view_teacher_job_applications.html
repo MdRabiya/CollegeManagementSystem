@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .job-application-container {
+    max-width: 500px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Style for job application */
+.job-application {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #3e1a9f;
+    background-color: #f8f8f8; /* Optional: Add a background color */
+}
+
+    
+    /* Style for student name */
+    .student-name {
+        font-weight: bold;
+        color: #333;
+    }
+    
+    /* Style for leave dates */
+    .leave-dates {
+        color: #555;
+    }
+    
+    /* Style for leave status */
+    .leave-status {
+        font-weight: bold;
+    }
+    
+    /* Style for action buttons */
+    .action-buttons {
+        margin-top: 10px;
+    }
+    
+    .action-buttons a {
+        display: inline-block;
+        margin-right: 10px;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 3px;
+    }
+    
+    /* Style for approve button */
+    .approve-btn {
+        background-color: #4caf50; /* Green */
+    }
+    
+    /* Style for reject button */
+    .reject-btn {
+        background-color: #f44336; /* Red */
+    }</style>
+</head>
+<body><center>
+    <div class="job-application-container">
+        <h1>Teacher Job Applications</h1>
+        {% for job_application in job_applications %}
+            <div class="job-application">
+                <p>{{ job_application.first_name }} {{ job_application.last_name }} - Status: {{ job_application.status }}</p>
+                <div class="action-buttons">
+                    <a class="approve-btn" href="{% url 'finalapp:approve_teacher_job_application' job_application.id %}">Approve</a>
+                    <a class="reject-btn" href="{% url 'finalapp:reject_teacher_job_application' job_application.id %}">Reject</a>
+                </div>
+            </div>
+        {% endfor %}</center>
+    </div>
+</body>
+</html>
+

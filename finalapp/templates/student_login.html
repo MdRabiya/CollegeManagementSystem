@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login</title>
+    <style>
+        body {
+            background-color:#f8f9fa;
+        }
+        .log {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .sty {
+            font-weight: bold;
+            color: #040404;
+
+        }
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn-primary {
+            background-color: #007bff;
+
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .register-link {
+            text-align: center;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div class="log">
+        <h1>Login</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username" class="sty">Username:</label>
+                <input type="text" name="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="sty">Password:</label>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button class="btn-primary">Login</button>
+        </form>
+        <div class="register-link">
+            <span style="color: black;">No account? <a href="{% url 'finalapp:student_register' %}" style="color: #007bff;">Register</a></span>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

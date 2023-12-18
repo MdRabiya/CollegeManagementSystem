@@ -1,0 +1,155 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+<!-- dashboard.html -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color:white;">{{ student_count }}</h3>
+                        <p class="card-text" style="color:white;">Total Students</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'finalapp:add_student_details' %}" class="card-link" style="color:white">
+                            More info <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-6">
+                <div class="card bg-success">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: white;">{{ teacher_count }}</h3>
+                        <p class="card-text"style="color: white;">Total Staff</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'finalapp:add_teacher_details' %}" class="card-link" style="color:white">
+                            More info <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+                <div class="card" style="background-color: blueviolet;">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: white;">{{ course_count }}</h3>
+                        <p class="card-text" style="color: white;">Total Courses</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'finalapp:course_list' %}" class="card-link" style="color:white" >
+                            More info <i class="fa fa-arrow-circle-right" ></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-lg-3 col-6">
+            <div class="card bg-danger">
+                <div class="card-body" >
+                    <h3 class="card-title" style="color: white;">{{ subject_count }}</h3>
+                    <p class="card-text" style="color: white;">Total Subjects</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'finalapp:subject_list' %}" class="card-link" style="color:white">
+                        More info <i class="fa fa-arrow-circle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    
+        .cards {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            width: 300px;
+            height: 400px;
+        }
+    
+        .cards:hover {
+            transform: scale(1.05);
+        }
+    
+        
+        .des {
+            padding: 20px;
+            text-align: center;
+        }
+    
+        .des button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    
+        .des button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    
+    
+    
+</head>
+<body>
+    
+
+        
+        <div class="card-container">
+       
+        <div class="cards">
+            <div class="image">
+                <img src="https://www.shutterstock.com/image-vector/teacher-icon-training-presentation-seminar-600w-342493829.jpg" height="300" width="300">
+            </div>
+            <div class="des">
+                <a href="{% url 'finalapp:teacher_total' %}"><button>Total Teachers </a></button>
+            </div>
+        </div>
+        
+    <div class="cards">
+        <div class="image">
+            <img src="https://t3.ftcdn.net/jpg/05/56/90/20/360_F_556902040_mNrTEGg5i4S83J9C5mvYwWKDgoWXUPPe.jpg" height="300" width="300">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:overView' %}"><button>Over View </a></button>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="image">
+            <img src="https://i.ytimg.com/vi/z-1qIGe86V4/maxresdefault.jpg" height="300" width="300">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:chart_view' %}"><button>Total Teachers </a></button>
+        </div>
+    </div>
+    </div>
+
+    
+</section>
+</body>
+</html>
+
+{% endblock %}

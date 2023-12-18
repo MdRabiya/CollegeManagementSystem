@@ -1,0 +1,230 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+       body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .content h1 {
+      color:orange;
+    }
+    .content p{
+      color: black;
+      font-size: small;
+    }
+
+    .contact-info p {
+      font-size: small;
+    }
+
+    .image {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+    }
+      div {
+    background-color:rgba(233, 229, 229, 0);
+    color: white;
+    font-size:larger;
+  }
+  
+      /* Reset default margin and padding */
+      body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+      }
+
+      /* Style to make the video fill the screen */
+      video {
+          width: 100vw;
+          height: 110vh;
+          margin: 0;
+          padding: 0;
+          object-fit: cover;
+      }
+      nav.navbar {
+    background-color: black;
+  }
+
+  nav.navbar a.nav-link {
+    font-size: 14px; /* Adjust the font size as needed */
+    color: white;
+  }
+
+    @keyframes marqueeAnimation {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+   
+    footer {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      
+    }
+
+  
+    footer .contact-info,
+    footer .address {
+      display: inline-block;
+      width: 30%; /* Adjust the width as needed */
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  
+  <img src="https://www.siddharthamahila.ac.in/images/sdm_logo.jpg" width="100%" alt="">
+  <nav style="background-color: black;" class="navbar navbar-expand-lg navbar-light"><br>
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" style="color: white;" href="{% url 'finalapp:admin_register' %}"><b>Home</b> </a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="{% url 'finalapp:aboutus' %}"><b>About us</b> </a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="{% url 'finalapp:student_admission_request' %}"><b>Admission</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="#"><b>Acadamics</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="{% url 'finalapp:teacher_register' %}"><b>Teacher</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="#"><b>Placements & Alumi</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="#"><b>Ranking</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="#"><b>Sports</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="#"><b>Exam Cell</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="#"><b>Research Cell</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="{% url 'finalapp:student_register' %}"><b>Student</b></a>
+        </li>
+        
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="{% url 'finalapp:contactus' %}"><b>Contact us</b></a>
+        </li>
+        <li class="nav-item active" >
+          <a class="nav-link" style="color: white;" href="{% url 'finalapp:teacher_job_application' %}"><b>Apply For job</b></a>
+        </li>
+        
+       
+      </ul>
+    {% if not user.is_authenticated %}
+   <a class="btn btn-primary" style="color: white;" href="{% url 'auth_login' %}"><b>Login</b></a>
+   <a class="btn btn-primary" style="color: white;" href="{% url 'registration_register' %}"><b>Register</b></a>
+   {% else %}
+   <a class="btn btn-primary" style="color: white;" href="{% url 'auth_logout' %}"><b>Logout</b></a>
+   {% endif %}
+
+    </div>
+  </nav>
+  <marquee>
+      <img src="https://www.nagarjunauniversity.ac.in/assets/img/logo/new-gif.gif" alt="News Image" width="40" height="30">
+    <span style="color: black; font-weight: bold;">TECH SPARKS-2K23||A STATE LEVEL TECHNICAL EVENT ON 29TH NOVEMBER 2023</span>
+    <img src="https://www.nagarjunauniversity.ac.in/assets/img/logo/new-gif.gif" alt="News Image" width="40" height="30">
+    <span style="color: black; font-weight: bold;">RAINBOW WEEK CELEBRATIONS||20-11-2023 TO 24-11-2023</span>
+  </marquee>
+  <div class="container">
+  {% block content %}
+  
+  {% endblock %}
+  </div>
+
+  
+  
+<style media="screen">
+  
+  .jumbotron {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-image: url('{% static "images/bg2.jpg" %}');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }</style>
+    <video autoplay playsinline muted loop>
+      <source src="{% static 'SDMSMK.mp4' %}" type="video/mp4">
+  </video>
+      
+  <div class="container">
+    
+    
+    <div class="content">
+      <h1 >About the College</h1>
+      <h1 style="color: black; font-size:28px;">Welcome to SRI DURGA MALLESWARA SIDDHARTHA MAHILA KALASALA</h1>
+      <p>The members of the Academy strongly believe that ‘‘There is no greater pillar of stability than a strong, free and educated woman’’. Hence the Academy started Sri Durga Malleswara Siddhartha Mahila Kalasala-Degree College in the year 1983, with an objective to provide quality education in general, promoting women education in particular and to empower young women into holistic personalities with multiple skills, resourcefulness, and human values.</p>
+  
+      <p>The motto ‘‘Aatma Depobhava’’ is the guiding principle behind all the activities undertaken in the college to produce wholesome personalities from socially and economically underprivileged sections in the urban and rural Krishna district.</p>
+  
+      <p>The college is spread over an area of 8.22 acres. It is located at the heart of the city and is within a stone’s throw to the main road. The college is situated in a pollution-free residential area. The college is a four-storied U-shaped building with 62 classrooms, a well-stacked library, well-equipped laboratories, Departments, Administrative Office, a Physical Fitness Center, a Seminar hall, and a spacious and well-furnished webinar hall with a seating capacity of 300 people each, an Audio-Visual teaching room, a huge indoor stadium, two hostels, vast play grounds, and a beautiful garden. The college also provides all necessary amenities like canteen, water coolers, exhaust fans, elevators, and separate vehicle parking for staff and students to cater to their needs.</p>
+    </div>
+  
+    <div class="image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Buddha's_statue_near_Belum_Caves_Andhra_Pradesh_India.jpg" alt="College Image">
+    </div>
+  </div>
+  <footer>
+    <div class="p-5 contact-info">
+      <h5><b>Contact Us</b></h5>
+      <p>0866 247 0912 <br>
+        sdmsmk@yahoo.co.in</p>
+    </div>
+    <div class="address">
+      <h5><b>Address</b></h5>
+    <p style="font-size: small;">MG Rd, Brindavan Colony, Sriram Nagar, Venkateswara Puram, Vijayawada, Andhra Pradesh 520010</p>  
+    </div>
+    <p style="text-align: center; font-size: small;">Copyright ©2023 All rights reserved to Siddhartha Mahila Kalasala | Developed By Nohita and Rabiya</p>
+  </footer>
+  <script>
+      // Autoplay functionality
+      document.addEventListener('DOMContentLoaded', function () {
+          var video = document.querySelector('video');
+          video.play();
+      });
+  </script>
+  <div>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

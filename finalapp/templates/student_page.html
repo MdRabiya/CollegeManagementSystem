@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url("https://st3.depositphotos.com/8852212/14599/i/450/depositphotos_145999883-stock-photo-blurred-image-many-old-books.jpg");
+        background-repeat:round;
+        background-size: cover;
+    
+    }
+
+    
+    *{
+        margin:0px;
+        padding: 0px;
+    }
+    body{
+        font-family: 'Nunito Sans', sans-serif;
+    }
+    @keyframes borderMove {
+    0% {
+        border-image-source: linear-gradient(45deg, #9e1479, #0e4b7d);
+    }
+    25% {
+        border-image-source: linear-gradient(45deg, #16588e, #881269);
+    }
+    50% {
+        border-image-source: linear-gradient(45deg, #3d1132, #041a2c);
+    }
+    75% {
+        border-image-source: linear-gradient(45deg, #0f4e81, #91036b4e);
+    }
+    100% {
+        border-image-source: linear-gradient(45deg, #f1b5e1, #d1e5f5);
+    }
+}
+  
+    
+    .cards {
+    position: relative;
+    width: 17%;
+    display: inline-block;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin: 55px;
+    box-shadow: 2px 2px 10px black;
+    overflow: hidden;
+    animation: moveCards 2s ease-in-out infinite;
+    border: 4px solid;
+    border-image: linear-gradient(45deg, #500f3e, #062a47);
+    border-image-slice: 1;
+
+    /* Apply animation to the border */
+    
+}
+.cards::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes moveCards {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(40px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.image img {
+    width: 100%;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image img:hover {
+    transform: scale(1.1);
+}
+.title {
+    text-align: center;
+    padding: 5px;
+    font-size: 5em; /* Adjust the font size as needed */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.8);
+}
+    .des{
+        text-align: center;
+        padding: 4px;
+    }
+    button {
+    background: linear-gradient(to right, #09931e, #00BFFF);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+button:hover {
+    color: yellow; /* Change the color on hover to make it brighter */
+}
+
+button:active {
+    transform: translateY(-3px); /* Add the jumping effect on click */
+}
+
+
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 0, 0.9); /* Increase the shadow size for the shining effect */
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+    }
+}
+
+
+button:hover {
+    background-color: green;
+    color: black;
+    animation: shine 1s infinite; /* Use the shine animation on hover */
+}
+
+
+.title {
+    margin-top: 5%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.title h1 {
+    color: rgb(48, 106, 222);
+    font-size: 50px;
+}
+
+/* Increase the size of all text */
+.title, .title * {
+    font-size: 5em; /* You can adjust the multiplier to increase or decrease the size */
+}
+</style>
+<body>
+    <div class="title">
+        <h1>Class Room</h1>
+    </div>
+
+    
+            
+    <div class="cards">
+        <div class="image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy76rPiiISBrpYjmFd8sqfRgVzWgPEgURMJHrNSIh__o8-VCpAH2JZrgz4dwkknR1jxQY&usqp=CAU" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:student_admission_request' %}"><button>Admission Form</button></a>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://img.freepik.com/premium-vector/feedback-concept-with-icon-concept-with-round-circle-shape-badge_25156-941.jpg?w=2000" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:submit_feedback' %}"><button>Student Feedback</button></a>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://png.pngtree.com/png-clipart/20230425/original/pngtree-leave-icon-png-image_9095272.png" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:student_leave_request' %}"><button>Apply for leave</button></a>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://thumbs.dreamstime.com/b/black-coffin-yellow-star-word-leave-infont-coffin-to-give-impression-leaving-eu-133022656.jpg" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:view_student_leave_requests_table' %}"><button>Updates of leave</button></a>
+        </div>
+    </div>
+
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/021/500/397/small/notice-fill-outline-icons-simple-stock-illustration-stock-vector.jpg" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:notice_list' %}"><button>View Notice</button></a>
+        </div>
+    </div>
+
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://seanheritage.com/wp-content/uploads/2014/01/questions.jpg" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:view_question_papers' %}"><button>View Questions</button></a>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://kittygroups.com/wp-content/uploads/2013/03/paper-party-games-answers.jpg" height="230" >
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:view_answer_sheets' %}"><button>View Answers</button></a>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxBDg8ob2IDuytXGJNxRWWep5PbFCHItu8_LfH4tK-pjigDkmQYXINbAnSlaofUJj2f94&usqp=CAU" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:view_fees' %}"><button>View Fee</button></a>
+        </div>
+    </div>
+
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCZMSvojI5Uql0S0hPr8UUyTdXVoDFUqLjMQ&usqp=CAU" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:course_list' %}"><button>View Courses</button></a>
+        </div>
+    </div>
+
+    
+
+    
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://slideplayer.com/4241258/14/images/slide_1.jpg " width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:subject_list' %}"><button>View Subjects</button></a>
+        </div>
+    </div>
+
+    <div class="cards">
+        <div class="image">
+            <img src="https://pbs.twimg.com/profile_images/1219975794426023936/b4D0Xx0K_400x400.png" width="300" height="230">
+        </div>
+        <div class="des">
+            <a href="{% url 'finalapp:view_results' %}"><button>View Results</button></a>
+        </div>
+    
+    </div>
+
+
+   
+    
+    
+
+
+
+
+</body>
+</html>

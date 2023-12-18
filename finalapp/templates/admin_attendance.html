@@ -1,0 +1,146 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 150px;
+     
+    }
+  </style>
+
+</head>
+
+
+<!--
+written By : sumit kumar
+facebook : fb.com/sumit.luv
+-->
+
+<body>
+<div class="container">
+
+  <div class="row">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h6 class="panel-title">Attendance</h6>
+
+      </div>
+
+      <table class="table table-hover" id="dev-table">
+        <thead>
+
+          <tr>
+            <th>Class Name</th>
+            <th>Take Attendance</th>
+  
+          </tr>
+        </thead>
+
+        <tr>
+          <td> MSDS</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'MSDS'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+
+        <tr>
+          <td> MSCS</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'MSCS-A'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+
+        <tr>
+          <td> MSCA</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'MSCS_B'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+
+        <tr>
+          <td>MECS</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'MECS'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+        <tr>
+            <td>MCCS</td>
+            <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'MCCS'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+            
+          </tr>
+
+        <tr>
+          <td>MPCS</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'MPCS'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+
+        <tr>
+          <td> BZC</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'BZC'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+
+        <tr>
+          <td> AZC</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'AZC'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+
+        <tr>
+          <td> FMB</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'FMB'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+
+        <tr>
+          <td> FMC</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'FMC'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+         
+        </tr>
+
+        <tr>
+          <td> Bcom</td>
+          <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'Bcom'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+          
+        </tr>
+        <tr>
+            <td> BBA</td>
+            <td><a class="btn btn-primary btn-xs" href="{% url 'finalapp:admin-take-attendance' 'BBA'  %}"><span class="glyphicon glyphicon-plus"></span></a></td>
+            
+          </tr>
+
+      </table>
+    </div>
+
+
+  </div>
+</div>
+
+
+<!--
+      written By : sumit kumar
+      facebook : fb.com/sumit.luv
+      -->
+
+    </body>
+</html>
